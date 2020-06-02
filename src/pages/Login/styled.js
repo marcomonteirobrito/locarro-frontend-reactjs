@@ -5,18 +5,20 @@ import background from '../../assets/img1.jpg';
 
 export const Header = styled.div`
   height: 60px;
-  color: #FFFFFF;
+  color: #F8F8FF;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  background: rgba(70, 80, 90, 0.7);
 
   h1 {
-    margin-left: 0 auto;
+    margin-left: 30px;
     font-size: 50px;
   }
 
   a {
     color: #FFF;
-    margin-left: 80px;
+    margin: 0 30px 0 30px;
    
     &:hover {
       color: ${darken(0.09, '#FFF')}
@@ -66,6 +68,13 @@ export const Container = styled.div`
       }
     }
 
+    span{ 
+      color: red;
+      align-self: flex-start;
+      font-weight: bold;
+      margin: 0 0 10px;
+    }
+
     button {
       margin: 5px 0 0;
       height: 44px;
@@ -79,17 +88,18 @@ export const Container = styled.div`
 
       &:hover {
         background: ${darken(0.1, '#fff')};
+        color: black;
       } 
     }
 
     h2 {
       margin-top: 25px;;
       font-weight: bold;
-      color: #fff;
+      color: red;
       font-size: 16px;
 
       &:hover {
-        color: ${darken(0.09, '#fff')}
+        color: ${darken(0.09, 'red')}
       }
     }
 

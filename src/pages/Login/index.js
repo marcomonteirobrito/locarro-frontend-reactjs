@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
 import { Container, Wrapper, Header } from './styled';
@@ -13,7 +14,6 @@ const schema = Yup.object().shape({
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -32,26 +32,26 @@ export default function Login() {
 
   return (
     <>
-    <Wrapper>
-      <Container>
-        <Header>
+    <Header>
         <h1>Locarro</h1>
         <div>
         <a href="https://github.com/marcomonteirobrito" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/marco-antonio-monteiro-de-brito-541ba0144/" target="_blank">Linkedin</a>
         </div>
-        </Header>
-        
-
-        <form schema={schema} onSubmit={handleSubmit}>
-        <input 
+    </Header>
+    <Wrapper>
+      <Container>
+        <Form schema={schema} onSubmit={handleSubmit}>
+        <Input 
+          name="email"
           type='email' 
           placeholder='Digite seu e-mail' 
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           />
 
-        <input 
+        <Input 
+          name="password"
           type='password' 
           placeholder='Sua senha'
           value={password}
@@ -62,7 +62,7 @@ export default function Login() {
         <Link to='/register'>
           <h2>Registrar conta</h2>
         </Link>
-        </form>
+        </Form>
       </Container>
     </Wrapper>
     </>
