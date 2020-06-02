@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
 import { Container, Wrapper, Header } from './styled';
-import api from '../../services/api';
+//import api from '../../services/api';
 
 const schema = Yup.object().shape({
   email: Yup.string().email('Insira um e-mail válido').required('E-mail obrigatório'),
@@ -12,22 +12,9 @@ const schema = Yup.object().shape({
 });
 
 export default function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-
-    try {
-      const response = await api.post('sessions', { email, password });
-
-      localStorage.setItem('token', response.data.token);
-      localStorage.setItem('userId', response.data.user.id);
-      localStorage.setItem('name', response.data.user.name);
-
-    } catch (error) {
-      alert('Falha no login, tente novamente');
-    }
+  function handleSubmit(data) {
+    console.tron.log(data);
   }
 
   return (
@@ -46,16 +33,12 @@ export default function Login() {
           name="email"
           type='email' 
           placeholder='Digite seu e-mail' 
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
           />
 
         <Input 
           name="password"
           type='password' 
           placeholder='Sua senha'
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}  
           />
 
         <button type='submit'>Entrar</button>

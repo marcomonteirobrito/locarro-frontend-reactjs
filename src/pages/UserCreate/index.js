@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
 import { Container, Wrapper } from './styled';
-import api from '../../services/api';
+//import api from '../../services/api';
 
 const schema = Yup.object().shape({
   name: Yup.string().required('O nome é obrigatório'),
@@ -18,105 +19,68 @@ const schema = Yup.object().shape({
 });
 
 export default function Login() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [address, setAddress] = useState('');
-  const [city, setCity] = useState('');
-  const [uf, setUf] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [cpf, setCpf] = useState('');
-  const [cnh, setCnh] = useState('');
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-    schema(schema);
-
-    try {
-      const response = await api.post('users', { 
-        name,
-        email, 
-        password,
-        address,
-        city,
-        uf,
-        phoneNumber,
-        cpf,
-        cnh
-      });
-      console.log(response);
-
-    } catch (error) {
-      alert('Falha no login, tente novamente');
+  async function handleSubmit(data) {
+      console.tron.log(data);
     }
-  }
 
   return (
     <Wrapper>
       <Container>
         <h1>Locarro</h1>
 
-        <form onSubmit={handleSubmit}>
-        <input 
+        <Form schema={schema} onSubmit={handleSubmit}>
+        <Input
+          name="name"
           type='name' 
           placeholder='Informe seu nome completo' 
-          value={name}
-          onChange={(event) => setName(event.target.value)}
           />
-        <input 
+        <Input
+          name="address" 
           type='address' 
           placeholder='Informe seu endereço' 
-          value={address}
-          onChange={(event) => setAddress(event.target.value)}
           />
-        <input 
+        <Input
+          name="city" 
           type='city' 
           placeholder='Informe sua cidade' 
-          value={city}
-          onChange={(event) => setCity(event.target.value)}
           />
-        <input 
+        <Input
+          name="uf" 
           type='uf' 
           placeholder='Informe seu estado' 
-          value={uf}
-          onChange={(event) => setUf(event.target.value)}
           />
-        <input 
+        <Input
+          name="phoneNumber" 
           type='phoneNumber' 
           placeholder='Informe seu numero de telefone' 
-          value={phoneNumber}
-          onChange={(event) => setPhoneNumber(event.target.value)}
           />
-        <input 
+        <Input
+          name="cpf" 
           type='cpf' 
           placeholder='informe seu CPF' 
-          value={cpf}
-          onChange={(event) => setCpf(event.target.value)}
           />
-        <input 
+        <Input
+          name="cnh" 
           type='cnh' 
           placeholder='Informe o número de sua CNH' 
-          value={cnh}
-          onChange={(event) => setCnh(event.target.value)}
           />
-        <input 
+        <Input
+          name="email" 
           type='email' 
           placeholder='Informe seu e-mail' 
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
           />
-        <input 
+        <Input
+          name="password" 
           type='password' 
           placeholder='Sua senha secreta' 
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
           />
 
         <button type='submit'>Cadastrar</button>
         <Link to='/'>
           <button id='register'>Já tenho uma conta</button>
         </Link>
-        </form>
+        </Form>
       </Container>
     </Wrapper>
   );
