@@ -1,35 +1,9 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
-import background from '../../assets/img1.jpg';
-
-export const Header = styled.div`
-  height: 60px;
-  color: #FFFFFF;
-  display: flex;
-  align-items: center;
-
-  h1 {
-    margin-left: 0 auto;
-    font-size: 50px;
-  }
-
-  a {
-    color: #FFF;
-    margin-left: 80px;
-   
-    &:hover {
-      color: ${darken(0.09, '#FFF')}
-    }
-
-  }
- 
-`;
-
 export const Wrapper = styled.div`
   height: 100%;
-  background: url(${background}) no-repeat;
-  background-size: 100%;
+  background: linear-gradient(-90deg, #483D8B, #6A5ACD);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,10 +15,8 @@ export const Container = styled.div`
   max-width: 350px;
   text-align: center;
 
-  header {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0;
+  h1 {
+    color: #fff;
   }
 
   form {
@@ -53,12 +25,12 @@ export const Container = styled.div`
     margin-top: 35px;
 
     input {
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.1);
       border: 0;
       border-radius: 4px;
       height: 44px;
       padding: 0 15px;
-      color: #ffffff;
+      color: #fff;
       margin: 0 0 10px;
 
       &::placeholder {
@@ -69,27 +41,33 @@ export const Container = styled.div`
     button {
       margin: 5px 0 0;
       height: 44px;
-      background: #fff;
+      background: #3b9eff;
       font-weight: bold;
-      color: #707070;
+      color: #fff;
       border: 0;
       border-radius: 4px;
       font-size: 16px;
       transition: background 0.2s;
 
       &:hover {
-        background: ${darken(0.1, '#fff')};
+        background: ${darken(0.03, '#3b9eff')};
       } 
     }
 
-    h2 {
-      margin-top: 25px;;
+    button#register {
+      margin: 10px 0 0 0;
+      height: 44px;
+      width: 350px;
+      background: #DC143C;
       font-weight: bold;
       color: #fff;
+      border: 0;
+      border-radius: 4px;
       font-size: 16px;
+      transition: background 0.2s;
 
       &:hover {
-        color: ${darken(0.09, '#fff')}
+        background: ${darken(0.03, '#DC143C')};
       }
     }
 

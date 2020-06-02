@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import * as Yup from 'yup';
 
-import { FiLogIn } from 'react-icons/fi';
-//import { FaEnvelope, FaKey } from 'react-icons/fa';
-import { Container, Logo, SectionLogin } from './styled';
+import { Container, Wrapper, Header } from './styled';
 import api from '../../services/api';
+
+const schema = Yup.object().shape({
+  email: Yup.string().email('Insira um e-mail válido').required('E-mail obrigatório'),
+  password: Yup.string().min(6, 'Minímo 6 caracteres').required('A senha é obrigatória'),
+});
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  async function handleLogin(event) {
+
+  async function handleSubmit(event) {
     event.preventDefault();
 
     try {
@@ -23,25 +28,43 @@ export default function Login() {
     } catch (error) {
       alert('Falha no login, tente novamente');
     }
-
   }
-  return (
-    <Container>
-        <Logo>Locarro</Logo>
 
-        <SectionLogin>
-          <form onSubmit={handleLogin}>
-          <h1>Email</h1>
-          <input type="text" placeholder="Digite seu melhor e-mail" />
-          <h1>Senha</h1>
-          <input type="password" placeholder="Digite sua senha" />
-          <button className="button" type="submit">Entrar</button>
-          <Link className="back-link" to="/register">
-            <FiLogIn size={16} color="#E02141" />
-            Não tenho cadastro
-          </Link>
-          </form>   
-        </SectionLogin>
-    </Container>
+  return (
+    <>
+    <Wrapper>
+      <Container>
+        <Header>
+        <h1>Locarro</h1>
+        <div>
+        <a href="https://github.com/marcomonteirobrito" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/marco-antonio-monteiro-de-brito-541ba0144/" target="_blank">Linkedin</a>
+        </div>
+        </Header>
+        
+
+        <form schema={schema} onSubmit={handleSubmit}>
+        <input 
+          type='email' 
+          placeholder='Digite seu e-mail' 
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+          />
+
+        <input 
+          type='password' 
+          placeholder='Sua senha'
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}  
+          />
+
+        <button type='submit'>Entrar</button>
+        <Link to='/register'>
+          <h2>Registrar conta</h2>
+        </Link>
+        </form>
+      </Container>
+    </Wrapper>
+    </>
   );
 }

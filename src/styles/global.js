@@ -8,8 +8,6 @@ export default createGlobalStyle`
     padding: 0;
     outline: 0;
     box-sizing: border-box;
-    height: 100%;
-    background: linear-gradient(-90deg, #1E90FF, #1874CD);
   }
 
   *:focus {
@@ -39,7 +37,5 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
-
-  
 
 `;
