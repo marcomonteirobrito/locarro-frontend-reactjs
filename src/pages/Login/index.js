@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
-import { Container, Wrapper, Header } from './styled';
-//import api from '../../services/api';
+import { Container, Wrapper} from './styled';
+import api from '../../services/api';
 
 const schema = Yup.object().shape({
   email: Yup.string().email('Insira um e-mail válido').required('E-mail obrigatório'),
@@ -12,22 +12,22 @@ const schema = Yup.object().shape({
 });
 
 export default function Login() {
+  const history = useHistory();
 
   function handleSubmit(data) {
-    console.tron.log(data);
+    api.post('sessions', data).then(response => {
+      localStorage.setItem('token', response.data.token);
+      history.push('/dashboard');
+    }).catch(error => {
+      alert('Falha no login, Tente novamente');
+    });
   }
 
   return (
     <>
-    <Header>
-        <h1>Locarro</h1>
-        <div>
-        <a href="https://github.com/marcomonteirobrito" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/marco-antonio-monteiro-de-brito-541ba0144/" target="_blank">Linkedin</a>
-        </div>
-    </Header>
     <Wrapper>
       <Container>
+        <h1>Login</h1>
         <Form schema={schema} onSubmit={handleSubmit}>
         <Input 
           name="email"

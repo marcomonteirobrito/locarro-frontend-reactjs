@@ -1,32 +1,7 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
-import background from '../../assets/img1.jpg';
-
-export const Header = styled.div`
-  height: 60px;
-  color: #F8F8FF;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(70, 80, 90, 0.7);
-
-  h1 {
-    margin-left: 30px;
-    font-size: 50px;
-  }
-
-  a {
-    color: #FFF;
-    margin: 0 30px 0 30px;
-   
-    &:hover {
-      color: ${darken(0.09, '#FFF')}
-    }
-
-  }
- 
-`;
+import background from '../../assets/login.jpg';
 
 export const Wrapper = styled.div`
   height: 100%;
@@ -39,14 +14,15 @@ export const Wrapper = styled.div`
 
 
 export const Container = styled.div`
-  width: 100%;
-  max-width: 350px;
+  width: 450px;
+  max-width: 450px;
+  padding: 35px;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;  
 
-  header {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0;
+  h1 {
+    color: orange;
   }
 
   form {
@@ -55,16 +31,16 @@ export const Container = styled.div`
     margin-top: 35px;
 
     input {
-      background: rgba(0, 0, 0, 0.4);
-      border: 0;
+      background: rgba(0, 0, 0, 0.6);
       border-radius: 4px;
+      border: 0;
       height: 44px;
       padding: 0 15px;
       color: #ffffff;
       margin: 0 0 10px;
 
       &::placeholder {
-        color: rgba(255, 255, 255, 0.7);
+        color: orange;
       }
     }
 
@@ -78,16 +54,16 @@ export const Container = styled.div`
     button {
       margin: 5px 0 0;
       height: 44px;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.7);
       font-weight: bold;
-      color: #707070;
+      color: #081229;
       border: 0;
       border-radius: 4px;
       font-size: 16px;
       transition: background 0.2s;
 
       &:hover {
-        background: ${darken(0.1, '#fff')};
+        background: ${darken(0.2, 'rgba(255, 255, 255, 0.7)')};
         color: black;
       } 
     }
@@ -95,11 +71,11 @@ export const Container = styled.div`
     h2 {
       margin-top: 25px;;
       font-weight: bold;
-      color: red;
+      color: rgba(255, 255, 255, 0.9);
       font-size: 16px;
 
       &:hover {
-        color: ${darken(0.09, 'red')}
+        color: ${darken(0.2, 'rgba(255, 255, 255, 0.7)')}
       }
     }
 

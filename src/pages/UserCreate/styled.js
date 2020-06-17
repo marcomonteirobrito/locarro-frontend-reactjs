@@ -1,76 +1,92 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
-export const Wrapper = styled.div`
+import background from '../../assets/login.jpg';
+
+export const Container = styled.div`
   height: 100%;
-  background: linear-gradient(-90deg, #483D8B, #6A5ACD);
+  background: url(${background}) no-repeat;
+  background-size: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 
-export const Container = styled.div`
-  width: 100%;
-  max-width: 350px;
+export const Wrapper = styled.div`
+  width: 600px;
+  max-width: 600px;
+  padding: 35px;
   text-align: center;
-
-  h1 {
-    color: #fff;
-  }
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;  
 
   form {
     display: flex;
     flex-direction: column;
-    margin-top: 35px;
+    margin-top: 10px;
 
     input {
-      background: rgba(0, 0, 0, 0.1);
-      border: 0;
+      background: rgba(0, 0, 0, 0.6);
       border-radius: 4px;
+      border: 0;
       height: 44px;
-      padding: 0 15px;
-      color: #fff;
+      padding: 0 150px;
+      color: #ffffff;
       margin: 0 0 10px;
 
       &::placeholder {
-        color: rgba(255, 255, 255, 0.7);
+        color: orange;
       }
+    }
+
+    select {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 4px;
+      border: 0;
+      height: 44px;
+      padding-left: 147px;
+      width: 457px;
+      color: orange;
+      margin: 0 0 10px;
+
+    }
+
+    span{ 
+      color: red;
+      align-self: flex-start;
+      font-weight: bold;
+      margin: 0 0 10px;
     }
 
     button {
       margin: 5px 0 0;
       height: 44px;
-      background: #3b9eff;
+      background: rgba(255, 255, 255, 0.7);
       font-weight: bold;
-      color: #fff;
+      color: #081229;
       border: 0;
       border-radius: 4px;
       font-size: 16px;
       transition: background 0.2s;
 
       &:hover {
-        background: ${darken(0.03, '#3b9eff')};
+        background: ${darken(0.2, 'rgba(255, 255, 255, 0.7)')};
+        color: black;
       } 
     }
+  }
 
-    button#register {
-      margin: 10px 0 0 0;
-      height: 44px;
-      width: 350px;
-      background: #DC143C;
-      font-weight: bold;
-      color: #fff;
-      border: 0;
-      border-radius: 4px;
-      font-size: 16px;
-      transition: background 0.2s;
+  a {
+    text-decoration: none;
+  }
 
-      &:hover {
-        background: ${darken(0.03, '#DC143C')};
-      }
-    }
+  span {
+    color: #f8f8ff;
 
+    &:hover {
+        color: ${darken(0.2, 'rgba(255, 255, 255, 0.7)')};
+      } 
   }
 
 `;
