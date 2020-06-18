@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import { Container, Header, Main } from './styled';
 
+/* COLOCAR PARA TIRAR O TOKEN DO LOCAL STORAGE NO LOGOUT*/
+
 export default function Dashboard() {
   return (
     <>

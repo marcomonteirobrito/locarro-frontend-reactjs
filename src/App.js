@@ -1,6 +1,7 @@
 import React from 'react';
 import Routes from './routes';
 import GlobalStyle from './styles/global';
+import { ToastContainer } from 'react-toastify';
 
 import './config/ReactotronConfig';
 
@@ -9,6 +10,7 @@ function App() {
     <>
       <Routes />
       <GlobalStyle />
+      <ToastContainer autoClose={3000} />
     </>
   );
 }

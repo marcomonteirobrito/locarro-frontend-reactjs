@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
+import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 
 import { Container, Wrapper} from './styled';
@@ -19,7 +20,7 @@ export default function Login() {
       localStorage.setItem('token', response.data.token);
       history.push('/dashboard');
     }).catch(error => {
-      alert('Falha no login, Tente novamente');
+      toast.error('Falha no login, Tente novamente');
     });
   }
 
