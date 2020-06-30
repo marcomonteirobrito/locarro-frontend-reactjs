@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import * as Yup from 'yup';
 
-import { Container, Wrapper } from './styled';
+import { Container, Wrapper } from './styles';
 import api from '../../services/api';
 
 const schema = Yup.object().shape({

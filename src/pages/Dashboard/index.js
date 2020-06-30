@@ -1,46 +1,43 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Container, Header, Main } from './styled';
+import Header from '../Header';
+import { Container } from './styles';
 
 /* COLOCAR PARA TIRAR O TOKEN DO LOCAL STORAGE NO LOGOUT*/
 
 export default function Dashboard() {
+  function handleSubmit() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('id');
+  }
+
+
   return (
     <>
-      <Header>
-        <Link to='/login'>Logout</Link>
-      </Header>
-  
+      <Header />
       <Container>
-        <div className='Rent'>
-          <Link to='/rent'>
-          <button>Alugar veículo</button>
-          </Link>
-        </div>
-
-        <div className='GiveBack'>
-          <Link to='/giveback'>
-            <button>Devolver veículos</button>
-          </Link>
-          
-        </div>
-
         <div className='List'>
           <Link to='/carlist'>
-            <button>Listar veículos alugados</button>
+            <button>Listar meus veículos</button>
           </Link>
         </div>
 
         <div className='Create'>
           <Link to='/carRegister'> 
-            <button>Colocar um veículo para aluguel</button>
+            <button>Alugue seu veículo</button>
           </Link>
         </div>
 
         <div className='Perfil'>
           <Link>
             <button>Perfil</button>
+          </Link>
+        </div>
+
+        <div className='Logout'>
+          <Link to='/login'>
+            <button onClick={handleSubmit}>Sair</button>
           </Link>
         </div>
       </Container>

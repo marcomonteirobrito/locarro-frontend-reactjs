@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi'
 
-import { Container, Wrapper } from  './styled.js';
+import { Container, Wrapper } from  './styles.js';
 
 export default function Home() {
   return (

@@ -4,7 +4,7 @@ import { Form, Input } from '@rocketseat/unform';
 import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 
-import { Container, Wrapper} from './styled';
+import { Container, Wrapper} from './styles';
 import api from '../../services/api';
 
 const schema = Yup.object().shape({
@@ -18,6 +18,7 @@ export default function Login() {
   function handleSubmit(data) {
     api.post('sessions', data).then(response => {
       localStorage.setItem('token', response.data.token);
+      localStorage.setItem('id', response.data.user.id);
       history.push('/dashboard');
     }).catch(error => {
       toast.error('Falha no login, Tente novamente');

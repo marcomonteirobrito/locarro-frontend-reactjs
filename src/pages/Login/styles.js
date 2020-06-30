@@ -71,11 +71,11 @@ export const Container = styled.div`
     h2 {
       margin-top: 25px;;
       font-weight: bold;
-      color: rgba(255, 255, 255, 0.9);
+      color: #fa7d5e;
       font-size: 16px;
 
       &:hover {
-        color: ${darken(0.2, 'rgba(255, 255, 255, 0.7)')}
+        color: ${darken(0.1, '#fa7d5e')}
       }
     }
 
