@@ -7,13 +7,15 @@ import * as Yup from 'yup';
 import { Container, Wrapper} from './styles';
 import api from '../../services/api';
 
-const schema = Yup.object().shape({
-  email: Yup.string().email('Insira um e-mail válido').required('E-mail obrigatório'),
-  password: Yup.string().min(6, 'Minímo 6 caracteres').required('A senha é obrigatória'),
-});
+
 
 export default function Login() {
   const history = useHistory();
+
+  const schema = Yup.object().shape({
+    email: Yup.string().email('Insira um e-mail válido').required('E-mail obrigatório'),
+    password: Yup.string().min(6, 'Minímo 6 caracteres').required('A senha é obrigatória'),
+  });
 
   function handleSubmit(data) {
     api.post('sessions', data).then(response => {
