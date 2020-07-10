@@ -7,6 +7,7 @@ import CarCreate from './pages/CarCreate';
 import CarList from './pages/CarList';
 import UserCreate from './pages/UserCreate';
 import Home from './pages/Home';
+import Profile from './/pages/Profile';
 
 
 export default function Routes() {
@@ -19,6 +20,7 @@ export default function Routes() {
         <Route path="/register" component={UserCreate} />
         <Route path="/carRegister" component={CarCreate} />
         <Route path="/carlist" component={CarList} />
+        <Route path="/profile" component={Profile} />
       </Switch>
     </BrowserRouter>
   );

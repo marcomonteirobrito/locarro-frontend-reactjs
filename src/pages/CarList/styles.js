@@ -3,28 +3,57 @@ import { darken } from 'polished';
 
 export const Container = styled.div`
   height: 100%;
-  background-color: #192537;
+  background: linear-gradient(-45deg, #192537, #314869);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 
-  button {
-    margin-top: 25px;
-    max-width: 600px;
-    width: 500px;
-    height: 72px;
-    background: #E9E9E9;
-    border-radius: 8px;
-    border-color: #192537;
-    color: black;
-
-    &:hover {
-        background-color: ${darken(0.2, 'rgba(255, 255, 255, 0.7)')}
-    }
-  }
 `;
 
-export const Main = styled.div`
- 
+export const CarInfo = styled.div`
+  display: flex;
+  align-items: center;
+  width: 80px;
+  height: 120px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+`;
+
+export const Preview = styled.img`
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  margin-right: 13px;
+  padding: 5px;
+  margin-left: 16px;
+`;
+
+
+export const Content = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  width: 700px;
+  height: 120px;
+  border-radius: 8px;
+  justify-content: space-between;
+
+`;
+
+export const Observation = styled.div`
+  height: 120px;
+  width: 240px;
+
+`;
+
+
+export const Button = styled.div`
+  margin-right: 16px;
+
 `;

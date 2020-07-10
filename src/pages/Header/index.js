@@ -34,7 +34,7 @@ export default function Header() {
     <Container>
       <Content>
         <nav>
-          <Link to='/dashboard'>dashboard</Link>
+          <Link to='/dashboard'>DASHBOARD</Link>
         </nav>
 
         <aside>

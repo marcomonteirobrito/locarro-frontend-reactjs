@@ -2,9 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Header from '../Header';
-import { Container } from './styles';
+import { Container, ButtonLogout } from './styles';
 
-/* COLOCAR PARA TIRAR O TOKEN DO LOCAL STORAGE NO LOGOUT*/
 
 export default function Dashboard() {
   function handleSubmit() {
@@ -30,16 +29,16 @@ export default function Dashboard() {
         </div>
 
         <div className='Perfil'>
-          <Link>
+          <Link to='profile'>
             <button>Perfil</button>
           </Link>
         </div>
 
-        <div className='Logout'>
+        <ButtonLogout>
           <Link to='/login'>
             <button onClick={handleSubmit}>Sair</button>
           </Link>
-        </div>
+        </ButtonLogout>
       </Container>
     </>
   );
