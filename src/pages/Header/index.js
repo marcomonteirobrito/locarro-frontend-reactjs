@@ -16,16 +16,20 @@ export default function Header() {
         api.get(`users/${user_id}`, {})
         .then(response => {
             setProfile(response.data);
+        }).catch(err => {
+            setProfile('');
         })
     }, []);
 
     useEffect(() => {
-        api.get(`avatar/${profile.id}`, {
+        api.get(`avatar/${user_id}`, {
             headers: {
                 authorization: user_token,
             }
         }).then(response => {
             setAvatar(response.data);
+        }).catch(err => {
+
         })
     }, [profile]);
 

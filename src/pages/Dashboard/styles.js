@@ -21,17 +21,21 @@ export const Container = styled.div`
     font-weight: bold;
 
     &:hover {
-        background-color: ${darken(0.2, 'rgba(255, 255, 255, 0.7)')}
-    }
+        background-color: rgb(196, 216, 247);
+      }
   }
 `;
 
 export const ButtonLogout = styled.div`
-  
+
   button {
     color: red;
     background-color: rgb(231, 202, 202);
     font-weight: bold;
+
+    &:hover {
+        background: ${darken(0.06, 'rgb(231, 202, 202)')};
+      }
   }
 
 `;

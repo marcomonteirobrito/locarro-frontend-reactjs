@@ -41,7 +41,7 @@ export const Main = styled.div`
       }
     }
 
-    span{ 
+    span{
       color: red;
       align-self: flex-start;
       font-weight: bold;
@@ -50,8 +50,9 @@ export const Main = styled.div`
 
     button {
       margin: 5px 0 0;
+      width: 500px;
       height: 44px;
-      background: rgba(255, 255, 255, 0.7);
+      background: rgb(196, 216, 247);
       font-weight: bold;
       color: #081229;
       border: 0;
@@ -60,9 +61,8 @@ export const Main = styled.div`
       transition: background 0.2s;
 
       &:hover {
-        background: ${darken(0.2, 'rgba(255, 255, 255, 0.7)')};
-        color: black;
-      } 
+        background: ${darken(0.06, 'rgb(196, 216, 247)')};
+      }
     }
 
   }

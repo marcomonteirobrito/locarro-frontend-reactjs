@@ -44,6 +44,10 @@ export const Content = styled.div`
   border-radius: 8px;
   justify-content: space-between;
 
+  &:hover {
+        background: rgb(196, 216, 247);
+      }
+
 `;
 
 export const Observation = styled.div`
@@ -55,5 +59,6 @@ export const Observation = styled.div`
 
 export const Button = styled.div`
   margin-right: 16px;
+  cursor: pointer;
 
 `;

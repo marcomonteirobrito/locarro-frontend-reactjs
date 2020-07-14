@@ -10,7 +10,7 @@ import { Container, Main } from './styles';
 
 
 export default function Profile() {
-  const id = localStorage.getItem('id'); 
+  const id = localStorage.getItem('id');
   const [profile, setProfile] = useState('');
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export default function Profile() {
   }, []);
 
   function handleSubmit(data) {
-    api.put(`users${id}`, data).then(response => {
+    api.put(`users/${id}`, data).then(response => {
       toast.success('Perfil atualizado com sucesso');
     }).catch(error => {
       toast.error('Falha ao atualizar perfil, tente novamente');
@@ -47,9 +47,9 @@ export default function Profile() {
             name='oldPassword'
             placeholder='Sua senha atual'
           />
-          <Input 
-            type='password' 
-            name='password' 
+          <Input
+            type='password'
+            name='password'
             placeholder='Nova senha'
           />
           <Input

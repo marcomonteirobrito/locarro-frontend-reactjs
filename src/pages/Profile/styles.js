@@ -31,6 +31,7 @@ export const Main = styled.div`
         color: rgba(255, 255, 255, 0.7);
       }
     }
+
     /* schema de erro é um span */
     span {
       color: #fb6f91;
@@ -49,16 +50,16 @@ export const Main = styled.div`
     button {
       margin: 5px 0 0;
       height: 44px;
-      background: #3b9eff;
+      background: rgb(196, 216, 247);
       font-weight: bold;
-      color: #fff;
+      color: black;
       border: 0;
       border-radius: 4px;
       font-size: 16px;
       transition: background 0.2s;
 
       &:hover {
-        background: ${darken(0.03, '#3b9eff')};
+        background: ${darken(0.06, 'rgb(196, 216, 247)')};
       }
     }
   }
@@ -79,5 +80,5 @@ export const Main = styled.div`
         background: ${darken(0.08, '#f64c75')};
       }
     }
-    
+
 `;

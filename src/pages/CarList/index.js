@@ -21,7 +21,7 @@ export default function CarList() {
 
   async function handleDeleteCar(id) {
     try {
-        await api.delete(`cars/${id}`, {})
+        await api.delete(`cars/${id}`)
           .then(response => {
             toast.success('Veículo deletado com sucesso')
           });
@@ -63,7 +63,7 @@ export default function CarList() {
                   <MdLink style={{ marginRight: 8}} size={24} color="#222" />
               </a>
 
-              <FiTrash2 size={24} color="#e57878" onClick={handleDeleteCar}/>
+              <FiTrash2 size={24} color="#e57878" onClick={() => handleDeleteCar(vehicle.id)}/>
             </Button>
           </Content>
         </li>
