@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 import { toast } from 'react-toastify';
 import * as Yup from 'yup';
@@ -10,6 +11,7 @@ import { Container, Main } from './styles';
 
 export default function CarCreate() {
   const user_id = localStorage.getItem('id');
+  const history = useHistory();
 
   const schema = Yup.object().shape({
     board: Yup.string().required('Placa obrigatória'),
@@ -17,11 +19,14 @@ export default function CarCreate() {
     year: Yup.string().required('Ano obrigatório'),
     color: Yup.string().required('Cor obrigatório'),
     value: Yup.string().required('Valor obrigatório'),
+    observation: Yup.string(),
   });
 
   function handleSubmit(data) {
     api.post(`cars/${user_id}`, data).then(response => {
       toast.success('Veículo adicionado com sucesso');
+      console.log(data);
+      history.push('/dashboard');
     }).catch(error => {
       toast.error('Falha ao adicionar veículo, Tente novamente');
     });

@@ -9,14 +9,14 @@ export default function Home() {
     <Container>
       <Wrapper>
         <main>
-          <h1>Aqui seu carro não fica parado.</h1>
-          <p>Ajudamos pessoas que estejam com carros parados a ganharem uma renda extra.</p>
+          <h1>Não deixe seu carro parado.</h1>
+          <p>Alugue já seu veículo.</p>
 
           <Link to="/register">
             <span>
               <FiLogIn />
             </span>
-            <strong>Cadastre-se, alugue já seu veículo</strong>
+            <strong>Cadastre-se</strong>
           </Link>
           <Link to="/login">
             <span>

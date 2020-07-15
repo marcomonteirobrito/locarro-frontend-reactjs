@@ -8,6 +8,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  list-style-type: none;
 
 `;
 
@@ -43,6 +44,7 @@ export const Content = styled.div`
   height: 120px;
   border-radius: 8px;
   justify-content: space-between;
+
 
   &:hover {
         background: rgb(196, 216, 247);

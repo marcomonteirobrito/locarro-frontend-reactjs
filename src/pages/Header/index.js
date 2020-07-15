@@ -21,7 +21,7 @@ export default function Header() {
         })
     }, []);
 
-    useEffect(() => {
+    /*useEffect(() => {
         api.get(`avatar/${user_id}`, {
             headers: {
                 authorization: user_token,
@@ -31,7 +31,7 @@ export default function Header() {
         }).catch(err => {
 
         })
-    }, [profile]);
+    }, [profile]);*/
 
 
   return (
